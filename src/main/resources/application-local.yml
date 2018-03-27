@@ -1,0 +1,2 @@
+server:
+  port: 8081 # make sure its not conflicting with other services running on same local

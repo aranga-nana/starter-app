@@ -1,0 +1,20 @@
+server:
+  port: 80
+  servlet:
+    contextPath: /sample-app2 #spring boot 2.0
+  contextPath: /sample-app2 #spring boot < 2.0
+
+management:
+  endpoints:
+    web:
+      base-path: /manage
+
+spring:
+  profiles:
+    active: local
+
+info:
+  version: ${BUILD_LABEL:0.0.0-local} # will inject throw build process
+  application: sample-app #update with application name
+  profile: ${spring.profiles.active}
+  deployAppName : ${DEPLOY_APP_NAME:local}
