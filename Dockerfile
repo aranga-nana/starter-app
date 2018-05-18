@@ -6,6 +6,5 @@ COPY build/libs/*.jar app.jar
 RUN apk add --no-cache curl
 EXPOSE 80
 ENTRYPOINT ["java","-Djava.security.egd=file:/dev/./urandom","-jar","app.jar"]
-ENV SPRING_PROFILES_ACTIVE=prod
-ENV BUILD_LABEL=1.1.673-SNAPSHOT
+ENV SPRING_PROFILES_ACTIVE=local
 HEALTHCHECK CMD curl --fail http://localhost/sample-app/hello || exit 1
